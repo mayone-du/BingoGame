@@ -4,10 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BingoGame</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="index.js" type="module"></script>
+  <link rel="stylesheet" href="./src/css/style.css">
+  <!-- <script src="./src/js/index.js" type="module"></script> -->
+  <script src="./src/js/index.js" defer></script>
 </head>
 <body>
-  
+  <div class="ly_container">
+    <header class="bl_header">
+      <h1>ビンゴゲーム</h1><a href="./usage.html">使い方</a>
+    </header>
+    <form action="#" class="bl_form">
+      <p>遊ぶ人数を入力してください。2~4人で遊べます。</p>
+      <input id="js_form_number" type="number" placeholder="半角数字の2~4で入力してください。">
+      <button id="js_form_submit" type="submit">決定</button>
+    </form>
+    <div class="ly_row">
+      <div class="bl_card"></div>
+    </div>
+  </div>
 </body>
 </html>

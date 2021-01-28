@@ -1,0 +1,44 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+$black: black;
+
+.ly_container {
+  overflow-x: hidden;
+}
+
+.ly_row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bl_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > * {
+    display: block;
+
+    &:last-child {
+      margin-left: 30px;
+    }
+  }
+}
+
+
+
+.bl_form {
+  min-height: 500px;
+  background-color: lightblue;
+  margin: 0 50px;
+
+  & * {
+    display: block;
+  }
+}
