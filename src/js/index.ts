@@ -15,7 +15,7 @@ class BingoGame {
   bingoNumbers: number[];
   private playersNum: string;
   private cardNum: number | null;
-  cardsEl: any
+  cardsEl: any;
 
   constructor() {
     this.cardNumbers = [[], [], [], []];
@@ -24,34 +24,29 @@ class BingoGame {
     this.cardNum = null;
     this.bingoNumbersInit(1, 99);
     this.cardsEl = {};
-
   }
 
-    // 1~99までの配列を作成し、シャッフルする処理
-    private bingoNumbersInit(min: number, max: number) {
-      for (let i = 1; this.bingoNumbers.length < 99; i++) {
-        this.bingoNumbers.push(i);
-      }
-      let bingoLength = this.bingoNumbers.length;
-      while (bingoLength) {
-        const ranNum = Math.floor(Math.random() * bingoLength);
-        const lastVal = this.bingoNumbers[--bingoLength];
-        this.bingoNumbers[bingoLength] = this.bingoNumbers[ranNum];
-        this.bingoNumbers[ranNum] = lastVal;
-      }
+  // 1~99までの配列を作成し、シャッフルする処理
+  private bingoNumbersInit(min: number, max: number) {
+    for (let i = 1; this.bingoNumbers.length < 99; i++) {
+      this.bingoNumbers.push(i);
     }
-
+    let bingoLength = this.bingoNumbers.length;
+    while (bingoLength) {
+      const ranNum = Math.floor(Math.random() * bingoLength);
+      const lastVal = this.bingoNumbers[--bingoLength];
+      this.bingoNumbers[bingoLength] = this.bingoNumbers[ranNum];
+      this.bingoNumbers[ranNum] = lastVal;
+    }
+  }
 
   // シャッフルされた配列を、クリックされた数目のところからとりだす
   bingo(clickIndex: number) {
     $currNum.textContent = this.bingoNumbers[clickIndex].toString();
-    $prevNumbers.textContent = ` ${$prevNumbers.textContent} ${this.bingoNumbers[clickCount].toString()},`
-  }  
-
-
-  
-
-  
+    $prevNumbers.textContent = ` ${
+      $prevNumbers.textContent
+    } ${this.bingoNumbers[clickCount].toString()},`;
+  }
 
   // フォームの内容を取得
   formJadge(inputEl: HTMLInputElement) {
@@ -72,7 +67,6 @@ class BingoGame {
     }
   }
 
-
   // ビンゴカードの数字を作成
   cardNumCreate(min: number, max: number) {
     for (let i = 0; i < this.cardNumbers.length; i++) {
@@ -91,17 +85,17 @@ class BingoGame {
     }
   }
 
-
   // カードを作成、追加
   appendCards() {
     $cardParent.innerHTML = "";
-
+    
+    let playerIndex = 1;
     for (
       let arryIndex = 0;
       arryIndex < parseFloat(this.playersNum);
       arryIndex++
     ) {
-      let cardHtml: string = `<div class="bl_card">`;
+      let cardHtml: string = `<div class="bl_nameCard"><input class="bl_nameInput" type="text" placeholder="player ${playerIndex++}"><div class="bl_card">`;
       for (let i = 0; i < 25; i++) {
         if (i === 12) {
           cardHtml += `<button class="bl_card_btn bl_card_btn--center">free</button>`;
@@ -109,17 +103,13 @@ class BingoGame {
           cardHtml += `<button class="bl_card_btn">${this.cardNumbers[arryIndex][i]}</button>`;
         }
       }
-      cardHtml += `</div>`;
+      cardHtml += `</div></div>`;
 
       $cardParent.innerHTML += cardHtml;
     }
 
-
     this.cardsEl = $doc.querySelectorAll(".bl_card_btn");
   }
-
-
-
 }
 
 const bingogame = new BingoGame();
@@ -131,26 +121,20 @@ $formSubmit.addEventListener("click", function (e) {
   bingogame.cardNumCreate(1, 99);
   bingogame.appendCards();
 
-
-
   for (let i = 0; i < bingogame.cardsEl.length; i++) {
     const btn: HTMLElement = bingogame.cardsEl[i];
     btn.addEventListener("click", () => {
-      btn.classList.toggle("bl_card_btn--active")
-    })
+      btn.classList.toggle("bl_card_btn--active");
+    });
   }
-
 });
 
 $BingoBtn.addEventListener("click", function () {
   if (clickCount === bingogame.bingoNumbers.length) {
     alert("引き終わりました。");
     return;
-  };
+  }
   bingogame.bingo(clickCount);
-  
+
   clickCount++;
 });
-
-
-

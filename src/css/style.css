@@ -77,7 +77,15 @@
   text-align: center;
   display: block;
   margin: 0 auto;
-  padding: 10px 40px; }
+  padding: 10px 40px;
+  font-size: 25px;
+  font-weight: bold; }
+
+.bl_nameInput {
+  padding: 10px;
+  margin: 30px auto;
+  display: block;
+  width: 70%; }
 
 #js_cardParent {
   display: none; }

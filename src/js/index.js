@@ -73,8 +73,9 @@ class BingoGame {
     // カードを作成、追加
     appendCards() {
         $cardParent.innerHTML = "";
+        let playerIndex = 1;
         for (let arryIndex = 0; arryIndex < parseFloat(this.playersNum); arryIndex++) {
-            let cardHtml = `<div class="bl_card">`;
+            let cardHtml = `<div class="bl_nameCard"><input class="bl_nameInput" type="text" placeholder="player ${playerIndex++}"><div class="bl_card">`;
             for (let i = 0; i < 25; i++) {
                 if (i === 12) {
                     cardHtml += `<button class="bl_card_btn bl_card_btn--center">free</button>`;
@@ -83,7 +84,7 @@ class BingoGame {
                     cardHtml += `<button class="bl_card_btn">${this.cardNumbers[arryIndex][i]}</button>`;
                 }
             }
-            cardHtml += `</div>`;
+            cardHtml += `</div></div>`;
             $cardParent.innerHTML += cardHtml;
         }
         this.cardsEl = $doc.querySelectorAll(".bl_card_btn");
@@ -108,7 +109,6 @@ $BingoBtn.addEventListener("click", function () {
         alert("引き終わりました。");
         return;
     }
-    ;
     bingogame.bingo(clickCount);
     clickCount++;
 });
