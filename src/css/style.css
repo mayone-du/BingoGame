@@ -21,8 +21,81 @@
       margin-left: 30px; }
 
 .bl_form {
-  min-height: 500px;
+  height: 400px;
   background-color: lightblue;
   margin: 0 50px; }
+  .bl_form_text {
+    text-align: center;
+    font-size: 25px; }
+  .bl_form_input {
+    width: 50%;
+    height: 60px;
+    padding: 10px;
+    font-size: 25px;
+    margin: auto; }
+  .bl_form_submit {
+    width: auto;
+    margin: 20px auto;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px 40px; }
   .bl_form * {
     display: block; }
+
+.bl_playing {
+  height: 400px;
+  background-color: lightpink;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin: 0 50px; }
+  .bl_playing > * {
+    width: 50%; }
+
+.bl_prevNumbers {
+  height: 400px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: lightsalmon; }
+
+.bl_output {
+  height: 400px;
+  background-color: blue; }
+
+.bl_currNumber {
+  width: 300px;
+  height: 300px;
+  font-size: 100px;
+  font-weight: bold;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.bl_bingoBtn {
+  width: 30%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 40px; }
+
+#js_cardParent {
+  display: none; }
+
+.bl_card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 300px;
+  margin: 30px; }
+  .bl_card_btn {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px; }
+    .bl_card_btn.bl_card_btn--active {
+      background-color: lightgreen; }
+    .bl_card_btn.bl_card_btn--center {
+      background-color: lightcoral; }
