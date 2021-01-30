@@ -6,9 +6,11 @@
 
 
 $mainHeight: 400px;
-$demoColor: lightblue;
-$demoColor2: lightpink;
 $bl_cardSize: 300px;
+
+button {
+  cursor: pointer;
+}
 
 .ly_container {
   overflow-x: hidden;
@@ -25,6 +27,10 @@ $bl_cardSize: 300px;
   align-items: center;
   justify-content: center;
 
+  h1 {
+    margin: 10px 0;
+  }
+
   & > * {
     display: block;
 
@@ -38,7 +44,6 @@ $bl_cardSize: 300px;
 
 .bl_form {
   height: $mainHeight;
-  background-color: $demoColor;
   margin: 0 50px;
 
   &_text {
@@ -71,7 +76,6 @@ $bl_cardSize: 300px;
 
 .bl_playing {
   height: $mainHeight;
-  background-color: $demoColor2;
   display: none;
   align-items: center;
   justify-content: center;
@@ -86,12 +90,12 @@ $bl_cardSize: 300px;
   height: $mainHeight;
   font-size: 30px;
   font-weight: bold;
-  background-color: lightsalmon;
+  border: 1px solid black;
+  padding: 10px;
 }
 
 .bl_output {
   height: $mainHeight;
-  background-color: blue;
 }
 
 .bl_currNumber {
@@ -103,6 +107,7 @@ $bl_cardSize: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid black;
 }
 
 .bl_bingoBtn {

@@ -3,6 +3,9 @@
   margin: 0;
   box-sizing: border-box; }
 
+button {
+  cursor: pointer; }
+
 .ly_container {
   overflow-x: hidden; }
 
@@ -15,6 +18,8 @@
   display: flex;
   align-items: center;
   justify-content: center; }
+  .bl_header h1 {
+    margin: 10px 0; }
   .bl_header > * {
     display: block; }
     .bl_header > *:last-child {
@@ -22,7 +27,6 @@
 
 .bl_form {
   height: 400px;
-  background-color: lightblue;
   margin: 0 50px; }
   .bl_form_text {
     text-align: center;
@@ -44,7 +48,6 @@
 
 .bl_playing {
   height: 400px;
-  background-color: lightpink;
   display: none;
   align-items: center;
   justify-content: center;
@@ -56,11 +59,11 @@
   height: 400px;
   font-size: 30px;
   font-weight: bold;
-  background-color: lightsalmon; }
+  border: 1px solid black;
+  padding: 10px; }
 
 .bl_output {
-  height: 400px;
-  background-color: blue; }
+  height: 400px; }
 
 .bl_currNumber {
   width: 300px;
@@ -70,7 +73,8 @@
   margin: 10px auto;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  border: 1px solid black; }
 
 .bl_bingoBtn {
   width: 30%;
