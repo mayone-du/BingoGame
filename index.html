@@ -4,10 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BingoGame</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="index.js" type="module"></script>
+  <link rel="stylesheet" href="./src/css/style.css">
+  <!-- <script src="./src/js/index.js" type="module"></script> -->
+  <script src="./src/js/index.js" defer></script>
 </head>
 <body>
-  
+  <div class="ly_container">
+    <header class="bl_header">
+      <h1>ビンゴゲーム</h1><a href="./usage.html">使い方</a>
+    </header>
+    <form action="#" class="bl_form">
+      <p class="bl_form_text">遊ぶ人数を入力してください。2~4人で遊べます。</p>
+      <input class="bl_form_input" id="js_form_number" type="number" placeholder="半角数字の2~4で入力してください。" min="2" max="4">
+      <button class="bl_form_submit" id="js_form_submit" type="submit">決定</button>
+    </form>
+    <div class="bl_playing">
+      <div class="bl_prevNumbers"><!-- 今までに出た数字を表示していく -->
+
+      </div>
+      <div class="bl_output">
+        <div class="bl_currNumber"><!-- 最新の数字 -->
+        </div>
+        <button class="bl_bingoBtn">回す</button>
+      </div>
+    </div>
+    <div class="ly_row" id="js_cardParent">
+      <!-- サンプル -->
+      <!-- <div class="bl_card">
+        <button class="bl_card_btn">1</button>
+        <button class="bl_card_btn">2</button>
+        <button class="bl_card_btn">3</button>
+        <button class="bl_card_btn">4</button>
+        <button class="bl_card_btn">5</button>
+        <button class="bl_card_btn">6</button>
+        <button class="bl_card_btn">7</button>
+        <button class="bl_card_btn">8</button>
+        <button class="bl_card_btn">9</button>
+        <button class="bl_card_btn">10</button>
+        <button class="bl_card_btn">11</button>
+        <button class="bl_card_btn">12</button>
+        <button class="bl_card_btn bl_card_btn--center">free</button>
+        <button class="bl_card_btn">14</button>
+        <button class="bl_card_btn">15</button>
+        <button class="bl_card_btn">16</button>
+        <button class="bl_card_btn">17</button>
+        <button class="bl_card_btn">18</button>
+        <button class="bl_card_btn">19</button>
+        <button class="bl_card_btn">20</button>
+        <button class="bl_card_btn">21</button>
+        <button class="bl_card_btn">22</button>
+        <button class="bl_card_btn">23</button>
+        <button class="bl_card_btn">24</button>
+        <button class="bl_card_btn">25</button>
+      </div> -->
+    </div>
+  </div>
 </body>
 </html>

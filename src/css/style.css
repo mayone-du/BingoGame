@@ -1,0 +1,113 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+button {
+  cursor: pointer; }
+
+.ly_container {
+  overflow-x: hidden; }
+
+.ly_row {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.bl_header {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .bl_header h1 {
+    margin: 10px 0; }
+  .bl_header > * {
+    display: block; }
+    .bl_header > *:last-child {
+      margin-left: 30px; }
+
+.bl_form {
+  height: 400px;
+  margin: 0 50px; }
+  .bl_form_text {
+    text-align: center;
+    font-size: 25px; }
+  .bl_form_input {
+    width: 50%;
+    height: 60px;
+    padding: 10px;
+    font-size: 25px;
+    margin: auto; }
+  .bl_form_submit {
+    width: auto;
+    margin: 20px auto;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px 40px; }
+  .bl_form * {
+    display: block; }
+
+.bl_playing {
+  height: 400px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin: 0 50px; }
+  .bl_playing > * {
+    width: 50%; }
+
+.bl_prevNumbers {
+  height: 400px;
+  font-size: 30px;
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 10px; }
+
+.bl_output {
+  height: 400px; }
+
+.bl_currNumber {
+  width: 300px;
+  height: 300px;
+  font-size: 100px;
+  font-weight: bold;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black; }
+
+.bl_bingoBtn {
+  width: 30%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 40px;
+  font-size: 25px;
+  font-weight: bold; }
+
+.bl_nameInput {
+  padding: 10px;
+  margin: 30px auto;
+  display: block;
+  width: 70%; }
+
+#js_cardParent {
+  display: none; }
+
+.bl_card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 300px;
+  margin: 30px; }
+  .bl_card_btn {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px; }
+    .bl_card_btn.bl_card_btn--active {
+      background-color: lightgreen; }
+    .bl_card_btn.bl_card_btn--center {
+      background-color: lightcoral; }
